@@ -6,7 +6,186 @@
   <title>NotDevPay - Dashboard</title>
 
   <style>
-    /* ...[CSS asli kamu, tidak diubah]... */
+body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, blue, red);
+      margin: 0;
+      padding-bottom: 60px;
+      min-height: 100vh;
+      color: white;
+      position: relative;
+    }
+
+    header {
+      background-color: #000000aa;
+      padding: 1rem;
+      position: relative;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    .profile-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .profile-icon img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid white;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .profile-icon img:hover {
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .dashboard {
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .user-info {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      backdrop-filter: blur(4px);
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 1rem;
+      color: #dddddd;
+    }
+
+    .card h2 {
+      margin: 0.5rem 0 0 0;
+      font-size: 1.8rem;
+      color: #ffffff;
+    }
+
+    .saldo-row {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 5px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+
+    .saldo-row .rp {
+      font-size: 1.4rem;
+      color: #ffffffcc;
+    }
+
+    .topup-buttons {
+      display: flex;
+      justify-content: flex-start;
+      gap: 1rem;
+      margin-top: 1rem;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+    }
+
+    .topup-buttons::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .topup-buttons::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 4px;
+    }
+
+    .topup-buttons a {
+      background-color: #ffffff22;
+      color: white;
+      border: 1px solid #ffffff44;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 120px;
+      text-align: center;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .topup-buttons a:hover {
+      background-color: #ffffff44;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: #00000033;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+      z-index: 999;
+    }
+
+    .iklan-slider {
+      width: 305px;
+      height: 105px;
+      margin: 20px auto 0;
+      overflow: hidden;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .iklan-slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .iklan-slider img.active {
+      display: block;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 500px) {
+      .dashboard {
+        padding: 15px;
+      }
+        }
   </style>
 </head>
 <body>
